@@ -1,14 +1,16 @@
 Diagrama Entidad - Relación.
+![Modelo_Conceptual](https://github.com/user-attachments/assets/0c405303-5993-452b-808c-07e3a58cad94)
 
-<img width="960" height="720" alt="image" src="https://github.com/user-attachments/assets/273cc29d-dd02-4e44-8f9c-9cbbbdc9a929" />
 
 
 Diagrama Lógico.
 
-![Modelo_Logico](https://github.com/user-attachments/assets/11761804-ebe1-482a-b0f0-18894b66b055)
+![Modelo_Logico](https://github.com/user-attachments/assets/0fcfd0ea-faf9-4e6f-948a-519e0839dede)
+
 
 
 
 Diagrama Físico.
 
-![Modelo_Fisico](https://github.com/user-attachments/assets/59d01d37-c3f9-4c88-8f66-90029915fd23)
+![Modelo_Fisico](https://github.com/user-attachments/assets/9a9a17b6-3583-48b4-a522-808e956b09d7)
+
