@@ -2,35 +2,35 @@ USE db_fundacion;
 GO
 
 
--- Inserción de datos
+-- Inserciï¿½n de datos
 -- TABLAS INDEPENDIENTES
 INSERT INTO donante (id_donante, nombre, genero, fec_nac, correo, telefono, ciudad, pais, profesion, nivel_educativo, preferencia_contacto)
 VALUES
-(1, 'Ana Gómez', 'F', '1985-04-10', 'ana.gomez@mail.com', '555-1234', 'Madrid', 'España', 'Ingeniera', 'Universitario', 'Email'),
-(2, 'Carlos Pérez', 'M', '1990-08-22', 'carlos.perez@mail.com', '555-5678', 'Barcelona', 'España', 'Abogado', 'Universitario', 'Teléfono'),
-(3, 'Lucía Torres', 'F', '1978-01-15', 'lucia.torres@mail.com', '555-8765', 'Valencia', 'España', 'Médica', 'Postgrado', 'Email'),
-(4, 'Miguel Sánchez', 'M', '1982-05-05', 'miguel.sanchez@mail.com', '555-4321', 'Sevilla', 'España', 'Profesor', 'Universitario', 'Email'),
-(5, 'Sofía Martínez', 'F', '1995-09-12', 'sofia.martinez@mail.com', '555-9876', 'Bilbao', 'España', 'Diseñadora', 'Secundario', 'WhatsApp');
+(1, 'Ana Gï¿½mez', 'F', '1985-04-10', 'ana.gomez@mail.com', '555-1234', 'Madrid', 'Espaï¿½a', 'Ingeniera', 'Universitario', 'Email'),
+(2, 'Carlos Pï¿½rez', 'M', '1990-08-22', 'carlos.perez@mail.com', '555-5678', 'Barcelona', 'Espaï¿½a', 'Abogado', 'Universitario', 'Telï¿½fono'),
+(3, 'Lucï¿½a Torres', 'F', '1978-01-15', 'lucia.torres@mail.com', '555-8765', 'Valencia', 'Espaï¿½a', 'Mï¿½dica', 'Postgrado', 'Email'),
+(4, 'Miguel Sï¿½nchez', 'M', '1982-05-05', 'miguel.sanchez@mail.com', '555-4321', 'Sevilla', 'Espaï¿½a', 'Profesor', 'Universitario', 'Email'),
+(5, 'Sofï¿½a Martï¿½nez', 'F', '1995-09-12', 'sofia.martinez@mail.com', '555-9876', 'Bilbao', 'Espaï¿½a', 'Diseï¿½adora', 'Secundario', 'WhatsApp');
 
 INSERT INTO campania (id_camp, nombre, descripcion, tipo_camp, fecha_ini, fecha_fin)
 VALUES
-(1, 'Campaña Escolar 2025', 'Recaudación para útiles escolares', 'Educación', '2025-01-01', '2025-03-31'),
+(1, 'Campaï¿½a Escolar 2025', 'Recaudaciï¿½n para ï¿½tiles escolares', 'Educaciï¿½n', '2025-01-01', '2025-03-31'),
 (2, 'Ayuda a Refugiados', 'Fondos para asistencia humanitaria', 'Humanitaria', '2025-02-01', '2025-04-30'),
-(3, 'Salvemos el Bosque', 'Reforestación y conservación', 'Medio Ambiente', '2025-03-15', '2025-06-15'),
-(4, 'Navidad Solidaria', 'Entrega de regalos a niños', 'Social', '2025-11-01', '2025-12-31'),
-(5, 'Salud para Todos', 'Campaña de vacunación gratuita', 'Salud', '2025-05-01', '2025-07-31');
+(3, 'Salvemos el Bosque', 'Reforestaciï¿½n y conservaciï¿½n', 'Medio Ambiente', '2025-03-15', '2025-06-15'),
+(4, 'Navidad Solidaria', 'Entrega de regalos a niï¿½os', 'Social', '2025-11-01', '2025-12-31'),
+(5, 'Salud para Todos', 'Campaï¿½a de vacunaciï¿½n gratuita', 'Salud', '2025-05-01', '2025-07-31');
 
 INSERT INTO canal (id_canal, nombre)
 VALUES
 (1, 'Presencial'),
-(2, 'Página Web'),
-(3, 'Teléfono'),
+(2, 'Pï¿½gina Web'),
+(3, 'Telï¿½fono'),
 (4, 'Correo Postal'),
-(5, 'Aplicación Móvil');
+(5, 'Aplicaciï¿½n Mï¿½vil');
 
 INSERT INTO metodo_pago (id_mpago, nombre)
 VALUES
-(1, 'Tarjeta de Crédito'),
+(1, 'Tarjeta de Crï¿½dito'),
 (2, 'Transferencia Bancaria'),
 (3, 'PayPal'),
 (4, 'Efectivo'),
@@ -38,10 +38,10 @@ VALUES
 
 INSERT INTO evento (id_even, nombre, tipo_even, fecha_evento, lugar, asistentes_estimados)
 VALUES
-(1, 'Cena Benéfica', 'Recaudación', '2025-03-20', 'Hotel Madrid Center', 200),
+(1, 'Cena Benï¿½fica', 'Recaudaciï¿½n', '2025-03-20', 'Hotel Madrid Center', 200),
 (2, 'Concierto Solidario', 'Entretenimiento', '2025-04-15', 'Auditorio Nacional', 500),
 (3, 'Subasta de Arte', 'Cultural', '2025-05-10', 'Museo de Arte Moderno', 150),
-(4, 'Maratón por la Salud', 'Deportivo', '2025-06-05', 'Parque Central', 300),
+(4, 'Maratï¿½n por la Salud', 'Deportivo', '2025-06-05', 'Parque Central', 300),
 (5, 'Feria Solidaria', 'Comunitario', '2025-07-25', 'Plaza Mayor', 400);
 
 -- TABLAS TRANSACCIONALES
@@ -90,3 +90,22 @@ VALUES
 (1, 4, 1),
 (4, 2, 1),
 (5, 1, 0);
+
+EXEC SP_HELP donacion;
+
+alter table donacion
+DROP constraint FK__donacion__id_can__4222D4EF;
+
+ALTER TABLE donacion
+DROP COLUMN id_canal;
+
+-- Drop table canal
+DROP TABLE canal;
+
+-- Drop table participacion
+DROP TABLE participacion;
+
+-- Drop table evento
+DROP TABLE evento;
+
+select * from donacion
