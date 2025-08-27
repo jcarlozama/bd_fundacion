@@ -4,20 +4,16 @@
 
 En base al tema elegido plantear un caso referente a bases de datos.
 **Contexto:**
-La fundación Manos Solidarias es una organización sin fines de lucro que recauda
-fondos mediante campañas y donaciones individuales para apoyar programas de
-salud, educación y asistencia social. En los últimos años, ha notado que algunas
-campañas tienen más éxito que otras y que ciertos perfiles de donantes donan con
-más frecuencia o mayor monto. Por eso, han decidido diseñar una base de datos
-centralizada para analizar y segmentar a sus donantes, con el objetivo de optimizar
-futuras campañas y fidelizar a los donantes.
+La Fundación “Manos Solidarias” busca fortalecer sus estrategias de recaudación mediante una mejor comprensión de los perfiles de sus donantes. Actualmente, la organización almacena información estructurada en una base de datos relacional que incluye los datos personales de los donantes, sus donaciones, las campañas en las que participan y los métodos de pago utilizados.
+
+La necesidad central es segmentar a los donantes con el fin de identificar patrones de comportamiento, preferencias y características demográficas que permitan diseñar campañas personalizadas y más efectivas.
 
 **Objetivo del Caso:**
 Diseñar una base de datos relacional que permita:
 Registrar a los donantes, sus características sociodemográficas y comportamiento de
 donación.
-Registrar campañas de recaudación y eventos especiales.
-Asociar cada donación con su campaña o canal.
+Registrar campañas de recaudación.
+Asociar cada donación con su campaña y método de pago.
 Facilitar análisis posteriores para segmentación y predicción de comportamiento.
 
 **Requisitos del Sistema:**
@@ -41,12 +37,6 @@ espontáneas sin campaña).
 * Se registra también el canal (web, presencial, redes sociales, llamada
 telefónica).
 
-**Eventos:**
-* La fundación organiza eventos presenciales y virtuales (conciertos, subastas,
-caminatas).
-* Se desea registrar la participación de donantes en los eventos.
-* Para cada evento: nombre, tipo, fecha, lugar, número de asistentes estimados.
-
 **Segmentación (posterior):**
 * La estructura debe permitir identificar patrones como:
 * Frecuencia de donación.
@@ -63,14 +53,12 @@ caminatas).
 * Consultas SQL sugeridas:
 * ¿Quiénes son los donantes más frecuentes?
 * ¿Qué campañas generaron más ingresos?
-* ¿Qué canal de donación es más utilizado?
 * ¿Cuál es el perfil demográfico de los donantes de alto valor?
 
 **Sugerencia de entidades y relaciones:**
 * Donante (1:N) Donación
 * Campaña (1:N) Donación
-* Evento (N:M) Donante → tabla intermedia: Participación
-* Canal, MétodoPago: tablas de catálogo para normalizar
+* MétodoPago: tablas de catálogo para normalizar
 
 **Plantear un caso referente a una Solución BI.**
 
@@ -103,21 +91,17 @@ características sociodemográficas.
   - Fecha
   - Campaña ID
   - Donante ID
-  - Canal ID
   - Método de Pago ID
 * Dimensiones:
   - Tiempo (año, mes, semana)
 * Donante (edad, género, ciudad, profesión, nivel educativo)
 * Campaña (nombre, tipo, fechas)
-o Canal (web, presencial, redes, llamada)
-Evento (asociación opcional si es una campaña-evento)
-Método de Pago (tarjeta, transferencia, etc.)
+* Método de Pago (tarjeta, transferencia, etc.)
 
 **3. KPIs e Indicadores Clave:**
 * Total recaudado por campaña
 * Tasa de conversión de campañas (donantes vs. contactados)
-* Recaudación por canal
-* % de participación en eventos vs. donación
+* Recaudación por método de pago.
 * Ciclo de vida de donante (tiempo entre primeras y últimas donaciones)
 * Donantes nuevos vs. recurrentes
 * Segmentación RFM (Recencia, Frecuencia, Monto)
