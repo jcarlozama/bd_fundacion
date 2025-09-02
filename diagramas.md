@@ -14,3 +14,6 @@ Diagrama Físico.
 
 ![Modelo_Fisico](https://github.com/user-attachments/assets/9a9a17b6-3583-48b4-a522-808e956b09d7)
 
+Modelo Dimensional
+
+<img width="2332" height="1387" alt="image" src="https://github.com/user-attachments/assets/591013b5-1261-4d10-a8af-7527ce9bbf8e" />
